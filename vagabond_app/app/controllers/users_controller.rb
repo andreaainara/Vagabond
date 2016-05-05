@@ -4,7 +4,7 @@ class UsersController < ApplicationController
       render :index
    end
 
-####Stores new account in db
+####Stores new account in db // sign up page?
    def new
       @user = User.new
       render :new
@@ -16,6 +16,7 @@ class UsersController < ApplicationController
       user_params = params.require( :user).permit( :first_name, :last_name, :created_at, :current_city)
       @user = User.create(user_params)
    end
+
 ####Show profile page####
    def show
       @user = User.find_by_id(params[:id])
