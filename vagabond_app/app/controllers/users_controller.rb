@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+<<<<<<< HEAD
    def index
       @users = User.all
       render :index
