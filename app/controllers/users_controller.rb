@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :logged_in?, only: [:show]
-  
+
   def index
     render :index
   end
@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
 
     login(@user)
-    redirect_to @user
+    redirect_to root_path
   end
 
   def show
