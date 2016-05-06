@@ -1,24 +1,22 @@
 class UsersController < ApplicationController
-   def index
-      @users = User.all
-      render :index
-   end
+   before_action :logged_in?, only: [:show]
 
-
-
-   
-
-   ####Show profile page####
    def show
-      @user = User.find_by_id(params[:id])
+      @user = User.find(params[:id])
       render :show
    end
-
+   
    def edit
       user_id = params[:id]
       @user = User.find_by_id(user_id)
-      if @user.save
-      end
+      render :edit
    end
 
+   def update
+      user_id = params[:id]
+      user = User.find_by_id(user_id)
+      user_params = params.require(:user).permit(:name, :description)
+      user.update_attributes(user_params)
+      redirect_to user_path(user)
+   end
 end
