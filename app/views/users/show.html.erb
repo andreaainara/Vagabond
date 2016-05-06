@@ -1,14 +1,11 @@
 <div>
-   Welcome, <%= @user.email %>
+   <!-- Welcome, <%= @user.email %> -->
 
-   <ul>
- <li><%= @user.first_name %></li>
- <li><%= @user.last_name %></li>
- <li><%= @user.current_city %></li>
- <li><%= @user.email %></li>
+   User Name: <%= @user.first_name %> <%= @user.last_name %> is logged in! <br />
+   Member Since: <%= @user.created_at %> <br />
+   Current City: <%= @user.current_city %> <br />
+   Email: <%= @user.email %><br />
 
-
-</ul>
-
+   <%= link_to "Edit", edit_user_path(@user) %>
 
 </div>
