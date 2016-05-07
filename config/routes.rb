@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   patch "/users/:id", to: "users#update"
   get "/login", to: "sessions#new"
   get "/logout", to: "sessions#destroy"
-  post "/sessions", to: "sessions#create"
+  post "/sessions", to: "sessions#create", as: "sessions"
   # get "/libraries", to: "libraries#index"
   # get "/libraries", to: "libraries#new", as: "new_library"
   # post "/libraries", to: "libraries#create"
