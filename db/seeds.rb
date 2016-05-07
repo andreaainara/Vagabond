@@ -1,1 +1,1 @@
-Post.create({title: "Sonoma, CA", content: "In the heart of wine country and just an hour and half out of San Francisco!"})
+Post.create({title: "San Francisco, CA", content: "Wine bars, and hills, and fog, oh my!"})
