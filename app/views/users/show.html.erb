@@ -10,3 +10,13 @@ Member Since: <%= @user.created_at %><br>
 <button type="button" class="btn btn-default btn-xs"><%= link_to "Edit", edit_user_path(@user) %></button>
 
 </div>
+
+<div class="container">
+  <h4><%= @user.first_name %> has contributed the following posts:</h4>
+  <% @posts.each do |post| %>
+    <ul>
+      <li><%= link_to post.title %>
+    </ul>
+  <% end %>
+
+</div>

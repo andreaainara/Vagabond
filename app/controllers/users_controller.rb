@@ -23,7 +23,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    user_id = current_user.id
+
+    @user = User.find(user_id)
+    @posts = Post.where(user_id: user_id)
+
     render :show
   end
 
