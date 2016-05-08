@@ -33,4 +33,9 @@ class PostsController < ApplicationController
       redirect_to city_path, :city_id=>city_id
    end
 
+   def show
+      @post=Post.find_by_id[post_id]
+      render :show
+   end
+
 end

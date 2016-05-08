@@ -1,0 +1,10 @@
+<div>
+
+<%= @post.title %><br>
+<%= @post.content %><br>
+
+<button type="button" class="btn btn-default btn-xs"><%= link_to "Edit", edit_post_path(@post) %></button>
+<button type="button" class="btn btn-default btn-xs"><%= link_to "Cancel", redirect_to  %></button>
+<button type="button" class="btn btn-default btn-xs"><%= link_to "Delete", delete_post_path(@post) %></button>
+
+</div>
