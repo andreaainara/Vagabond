@@ -1,12 +1,12 @@
 <div>
-Welcome, <%= @user.email %>
 
-User Name: <%= @user.first_name %> <%= @user.last_name %> is logged in! <br>
+Welcome, <%= @user.first_name %> <%= @user.last_name%>!<br>
+You are logged in under <%= @user.email %> <br>
+<%= @user.current_city %><br>
+<!-- <%= @user.email %><br> -->
 Member Since: <%= @user.created_at %><br>
-Current City: <%= @user.current_city %><br>
-Email: <%= @user.email %><br>
+<!-- <%= link_to "Edit", edit_user_path(@user) %> -->
 
-<%= link_to "Edit", edit_user_path(@user) %>
-
+<button type="button" class="btn btn-default btn-xs"><%= link_to "Edit", edit_user_path(@user) %></button>
 
 </div>
