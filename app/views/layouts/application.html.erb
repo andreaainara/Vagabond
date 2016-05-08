@@ -8,22 +8,25 @@
   <style>
  .carousel-inner > .item > img,
  .carousel-inner > .item > a > img {
-     width: 90%;
+     width: 100%;
      margin: auto;
  }
  </style>
 
 </head>
 <body>
-  <ul>
-    <% if current_user %>
-       <li><%= link_to "Profile", user_path(current_user) %></li>
-       <li><%= link_to "Log Out", logout_path %></li>
-     <% else %>
-       <li><%= link_to "Create Account", new_user_path %></li>
-       <li><%= link_to "Log In", login_path %></li>
-     <% end %>
-  </ul>
+  <div class = "container">
+    <ul class = "nav nav-tabs">
+      <% if current_user %>
+         <li><%= link_to "Profile", user_path(current_user) %></li>
+         <li><%= link_to "Log Out", logout_path %></li>
+       <% else %>
+         <li><%= link_to "Create Account", new_user_path %></li>
+         <li><%= link_to "Log In", login_path %></li>
+       <% end %>
+    </ul>
+    <h1>Vagabond</h1>
+  </div>
 
 <%= yield %>
 
