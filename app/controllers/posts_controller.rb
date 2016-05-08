@@ -1,12 +1,17 @@
 class PostsController < ApplicationController
 
+  def new
+     @post = Post.new
+     render :new
+  end
+
    def create
       user_id = @user.id
-      @city = City.find(params[:city_id])
-      title=params[:title]
-      content=params[:content]
-      Post.create(:user_id=>user_id, :city_id=>@city.id, :title=>title, :content=>content)
-      redirect_to city_path, :city_id=>@city.id
+      @city = City.find_by(params[:id])
+      title = params[:title]
+      content = params[:content]
+      @post = Post.create(:user_id=>user_id, :city_id=>@city.id, :title=>title, :content=>content)
+      redirect_to city_path(:city_id=>@city.id)
    end
 
    def edit
@@ -34,7 +39,7 @@ class PostsController < ApplicationController
    end
 
    def show
-      @post=Post.find_by_id[post_id]
+      @post = Post.find_by_id(params[:id])
       render :show
    end
 
