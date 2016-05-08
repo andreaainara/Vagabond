@@ -1,0 +1,11 @@
+<h1><%= @city.name %></h1>
+<% @posts.each do |post| %>
+  <p>
+    <strong><%= post.title %></strong><br>
+  </p>
+<% end %>
+
+<% if current_user %>
+   <li><%= link_to "Add Post", user_path(current_user) %></li>
+ <% end %>
+</ul>

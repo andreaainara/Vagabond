@@ -39,6 +39,6 @@
 
 <% @cities.each do |city| %>
   <p>
-    <strong></strong> <%= city.name %><br>
+    <strong><%= link_to city.name, city_path(city) %></strong><br>
   </p>
 <% end %>
