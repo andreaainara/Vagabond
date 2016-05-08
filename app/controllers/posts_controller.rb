@@ -6,7 +6,7 @@ class PostsController < ApplicationController
       title=params[:title]
       content=params[:content]
       Post.create(:user_id=>user_id, :city_id=>@city.id, :title=>title, :content=>content)
-      redirect_to show_city, :city_id=>@city.id
+      redirect_to city_path, :city_id=>@city.id
    end
 
    def edit
@@ -23,14 +23,14 @@ class PostsController < ApplicationController
       post[:title]=title
       post[:content]=content
       post.save
-      redirect_to show_city, :city_id=>post[:city_id]
+      redirect_to city_path, :city_id=>post[:city_id]
    end
 
    def delete
       post=Post.find_by_id[post_id]
       city_id=post[:city_id]
       post.destroy
-      redirect_to show_city, :city_id=>city_id
+      redirect_to city_path, :city_id=>city_id
    end
-   
+
 end
