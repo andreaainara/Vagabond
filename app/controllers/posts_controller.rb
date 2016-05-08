@@ -6,10 +6,10 @@ class PostsController < ApplicationController
   end
 
    def create
-      user_id = @user.id
-      @city = City.find_by(params[:id])
-      title = params[:title]
-      content = params[:content]
+      user_id = current_user.id
+      @city = City.find_by_id(params[:id])
+      title = params[:post][:title]
+      content = params[:post][:content]
       @post = Post.create(:user_id=>user_id, :city_id=>@city.id, :title=>title, :content=>content)
       redirect_to city_path(:city_id=>@city.id)
    end
