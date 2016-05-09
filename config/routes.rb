@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#new"
   get "/logout", to: "sessions#destroy"
   post "/sessions", to: "sessions#create", as: "sessions"
+  get "/users/:id/profile", to: "users#profile", as: "profile"
   # get "/cities", to: "cities#index"
   # get "/cities", to: "cities#new", as: "new_cities"
   # post "/cities", to: "cities#create"
