@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   get "/posts/:id", to: "posts#show", as: "posts"
   get "/posts/:id", to: "posts#show", as: "show_post"
   patch "/posts/:id", to: "posts#update"
-  delete "/posts/:id", to: "posts#delete", as: "delete_post"
+  delete "/posts/:id", to: "posts#destroy", as: "delete_post"
   # get "/users/:user_id/cities", to: "library_users#index", as: "user_cities"
   # post "/cities/:city_id/users", to: "library_users#create", as: "library_users"
 end

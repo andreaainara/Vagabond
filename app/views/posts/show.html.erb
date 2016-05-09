@@ -4,7 +4,8 @@
 <%= @post.content %><br>
 
 
-<button type="button" class="btn btn-default btn-xs"><%= link_to "Edit", edit_post_path(@post) %></button>
-<button type="button" class="btn btn-default btn-xs"><%= link_to "Delete", delete_post_path(@post) %></button>
+<!-- <button type="button" class="btn btn-default btn-xs"><%= link_to "Edit", edit_post_path(@post) %></button> -->
+<%= button_to "Delete", posts_path,remote: true, data: {confirm: "Are you sure?"}, method: :delete %>
+<%= button_to "Edit", edit_post_path, method: "get" %>
 
 </div>

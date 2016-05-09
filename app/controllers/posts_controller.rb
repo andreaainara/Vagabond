@@ -17,9 +17,6 @@ class PostsController < ApplicationController
    def edit
       post_id=params[:id]
       @post=Post.find_by_id(post_id)
-      puts 1
-      puts @post
-      puts 2
       render :edit
    end
 
@@ -30,11 +27,11 @@ class PostsController < ApplicationController
       redirect_to show_post_path
    end
 
-   def delete
-      post=Post.find_by_id[post_id]
-      city_id=post[:city_id]
-      post.destroy
-      redirect_to city_path, :city_id=>city_id
+   def destroy
+      @post=Post.find_by_id(params[:id])
+      # post_id=@post[:post_id]
+      @post.destroy
+      redirect_to user_path
    end
 
    def show
