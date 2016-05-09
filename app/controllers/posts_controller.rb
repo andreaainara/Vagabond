@@ -31,8 +31,9 @@ class PostsController < ApplicationController
    def destroy
       @post=Post.find_by_id(params[:id])
       # post_id=@post[:post_id]
+      user=@post.user_id
       @post.destroy
-      redirect_to user_path
+      redirect_to user_path(user)
 
       # #user_id should equal user_id in order to edit code
       # title=params[:title]
