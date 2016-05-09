@@ -13,7 +13,6 @@ class PostsController < ApplicationController
       p @city
       title = params[:post][:title]
       content = params[:post][:content]
-      binding.pry
       @post = Post.create(:user_id=>user_id, :city_id=>@city.id, :title=>title, :content=>content)
       redirect_to city_path(:city_id=>@city.id)
    end

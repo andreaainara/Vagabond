@@ -15,7 +15,7 @@ Member Since: <%= @user.created_at %><br>
   <h4><%= @user.first_name %> has contributed the following posts:</h4>
   <% @posts.each do |post| %>
     <ul>
-      <li><%= link_to post.title %>
+      <li><%= link_to post.title, posts_path(post) %>
     </ul>
   <% end %>
 
