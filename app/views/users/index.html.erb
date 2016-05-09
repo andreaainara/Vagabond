@@ -36,6 +36,12 @@
     </a>
 </div>
 
+<% if flash[:success] %>
+  <div class="success"><%= flash[:success] %></div>
+<% end %>
+
+  </div>
+
 
 <% @cities.each do |city| %>
   <p>

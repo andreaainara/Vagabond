@@ -42,6 +42,7 @@ class UsersController < ApplicationController
      user = User.find_by_id(user_id)
      user_params = params.require(:user).permit(:first_name, :last_name, :current_city, :email)
      user.update_attributes(user_params)
+     flash[:success] = "Update successful!"
      redirect_to user_path(user)
   end
 end
