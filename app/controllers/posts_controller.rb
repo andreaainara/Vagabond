@@ -40,6 +40,7 @@ class PostsController < ApplicationController
       post=Post.find_by_id[post_id]
       city_id=post[:city_id]
       post.destroy
+      flash[:success] = "Post has been deleted"
       redirect_to city_path, :city_id=>city_id
    end
 

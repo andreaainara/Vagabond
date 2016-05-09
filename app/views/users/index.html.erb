@@ -36,13 +36,6 @@
     </a>
 </div>
 
-<% if flash[:success] %>
-  <div class="success"><%= flash[:success] %></div>
-<% end %>
-
-  </div>
-
-
 <% @cities.each do |city| %>
   <p>
     <strong><%= link_to city.name, city_path(city) %></strong><br>
