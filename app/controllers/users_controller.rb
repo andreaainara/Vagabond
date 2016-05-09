@@ -16,6 +16,7 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
     if @user.save
       login(@user)
+      flash[:success] = "Welcome to the Vagabond Community!"
       redirect_to root_path
     else
       render :new
