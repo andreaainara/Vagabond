@@ -14,6 +14,7 @@ class PostsController < ApplicationController
       title = params[:post][:title]
       content = params[:post][:content]
       @post = Post.create(:user_id=>user_id, :city_id=>@city.id, :title=>title, :content=>content)
+      flash[:notice] = "Post created successfullly!"
       redirect_to city_path(:city_id=>@city.id)
    end
 
@@ -31,6 +32,7 @@ class PostsController < ApplicationController
       post[:title]=title
       post[:content]=content
       post.save
+      fash[:success] = "Your post has been edited successfully!"
       redirect_to city_path, :city_id=>post[:city_id]
    end
 
@@ -38,6 +40,7 @@ class PostsController < ApplicationController
       post=Post.find_by_id[post_id]
       city_id=post[:city_id]
       post.destroy
+      flash[:success] = "Post has been deleted"
       redirect_to city_path, :city_id=>city_id
    end
 

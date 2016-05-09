@@ -16,6 +16,7 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
     if @user.save
       login(@user)
+      flash[:success] = "Welcome to the Vagabond Community!"
       redirect_to root_path
     else
       render :new
@@ -49,6 +50,7 @@ class UsersController < ApplicationController
      user = User.find_by_id(user_id)
      user_params = params.require(:user).permit(:first_name, :last_name, :current_city, :email)
      user.update_attributes(user_params)
+     flash[:success] = "Update successful!"
      redirect_to user_path(user)
   end
 end
