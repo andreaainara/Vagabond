@@ -1,5 +1,6 @@
 <div>
 <% if current_user == @user %>
+
 Welcome, <strong><%= @user.first_name %> <%= @user.last_name%></strong>!<br>
 You are logged in under <em><%= @user.email %></em> <br>
 <strong>Current City: </strong><%= @user.current_city %><br>
@@ -11,11 +12,10 @@ You are logged in under <em><%= @user.email %></em> <br>
 <button type="button" class="btn btn-default btn-xs"><%= link_to "Edit", edit_user_path(@user) %></button>
 
 <% else %>
+
 <strong>Name: </strong><%= @user.first_name %> <%= @user.last_name%><br>
 <strong>From: </strong><%= @user.current_city %><br>
 <strong>Member Since: </strong><%= @user.created_at %><br>
-
-
 
 <% end %>
 </div>
