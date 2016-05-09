@@ -2,19 +2,19 @@
 
   <%= form_for @user, html: {:class => "form-horizontal center"} do |f| %>
     <div class="col-md-8">
-      <%= f.text_field :first_name, placeholder: "First Name", class: "form-control" %>
+      <%= f.text_field :first_name, placeholder: "First Name", required: true, class: "form-control" %>
     </div>
     <div class="col-md-8">
-      <%= f.text_field :last_name, placeholder: "Last Name", class: "form-control" %>
+      <%= f.text_field :last_name, placeholder: "Last Name", required: true, class: "form-control" %>
     </div>
     <div class="col-md-8">
-      <%= f.text_field :current_city, placeholder: "City", class: "form-control" %>
+      <%= f.text_field :current_city, placeholder: "City", required: true, class: "form-control" %>
     </div>
     <div class="col-md-8">
-      <%= f.text_field :email, placeholder: "email@email.com", class: "form-control" %>
+      <%= f.text_field :email, placeholder: "email@email.com", required: true, class: "form-control" %>
     </div>
     <div class="col-md-8">
-      <%= f.password_field :password, placeholder: "Password", class: "form-control" %>
+      <%= f.password_field :password, placeholder: "Password", required: true, class: "form-control" %>
     </div>
     <div class="col-md-8">
       <%= f.submit "Sign Up" %>
