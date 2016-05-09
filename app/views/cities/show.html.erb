@@ -1,13 +1,14 @@
 <h2><%= @city.name %></h2>
 <% @posts.each do |post| %>
   <p>
-    <strong><%= link_to post.title, posts_path(post) %></strong><br>
+    <strong><%= post.title %></strong><br>
     <%= post.content %><br>
+    <h6><em>Posted by: <%= link_to post.user.first_name, user_path(post.user_id) %></em></h6>
   </p>
 <% end %>
 
 <ul>
 <% if current_user %>
-   <li><%= link_to "Add Post", new_post_path(#) %></li>
+   <li><%= link_to "Add Post", new_post_path(@city) %></li>
  <% end %>
 </ul>
