@@ -2,14 +2,18 @@ class PostsController < ApplicationController
 
   def new
      @post = Post.new
+     @user = current_user.id
      render :new
   end
 
    def create
       user_id = current_user.id
+      p @user
       @city = City.find_by_id(params[:id])
+      p @city
       title = params[:post][:title]
       content = params[:post][:content]
+      binding.pry
       @post = Post.create(:user_id=>user_id, :city_id=>@city.id, :title=>title, :content=>content)
       redirect_to city_path(:city_id=>@city.id)
    end
