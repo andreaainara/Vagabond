@@ -25,6 +25,7 @@ class PostsController < ApplicationController
       @post=Post.find_by_id(params[:id])
       post_params = params.require(:post).permit(:title, :content, :commit, :id)
       @post.update_attributes(post_params)
+      flash[:success] = "Post successfully updated!"
       redirect_to show_post_path
    end
 

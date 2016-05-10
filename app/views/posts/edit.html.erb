@@ -1,9 +1,9 @@
-<div>
+<div class="col-md-6">
 
-   <%= form_for @post, url: posts_path, method: :patch do |f| %>
-   <%= f.text_field :title %><br />
-   <%= f.text_field :content %><br />
-   <%= f.submit "Edit Post" %>
+   <%= form_for @post, url: posts_path, html: {:class => "form-horizontal center"}, method: :patch do |f| %>
+   <strong>Title: </strong><%= f.text_field :title, class: "form-control" %><br />
+   <strong>Content: </strong><%= f.text_area :content, class: "form-control" %><br />
+   <%= f.submit "Save Post" %>
    <% end %>
 
 </div>
