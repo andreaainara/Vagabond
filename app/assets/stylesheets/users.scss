@@ -16,8 +16,17 @@
    padding-top: 20px;
    padding-bottom: 20px;
    text-align: right;
-   background-color: rgba(0, 0, 0, 0.5);
+   background-color: black;
    border: none;
+   margin-bottom: 0px;
+ }
+ .megatron {
+   background-image: url("background.jpg");
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;
+   height: 600px;
+   color: white;
  }
 
  .alert-success {
@@ -26,3 +35,35 @@
  color: #468847;
  text-align: left;
  }
+
+ #vagabond {
+  text-align: center;
+  font-size: 250px;
+  margin-top: 230px;
+  height: 40px;
+ }
+
+ h1 {
+   font-size: 150px;
+ }
+
+ #text {
+   margin-top: 150px;
+   margin-left: 60%;
+ }
+
+ #paragraph {
+   margin-top: 80px;
+   text-align: center;
+   margin-bottom: 50px;
+ }
+
+ #city-post {
+   margin-top: 10px;
+   text-align: center;
+ }
+  .cities {
+    font-size: 20px;
+    margin-top: 5px;
+    text-align: center;
+  }
