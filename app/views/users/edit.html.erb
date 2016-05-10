@@ -2,16 +2,16 @@
 
    <%= form_for @user, html: {:class => "form-horizontal center"} do |f| %>
    <div class="col-md-8">
-   <%= f.text_field :first_name, class: "form-control" %>
+   <strong>First Name: </strong><%= f.text_field :first_name, class: "form-control" %>
    </div>
    <div class="col-md-8">
-   <%= f.text_field :last_name, class: "form-control" %>
+   <strong>Last Name: </strong><%= f.text_field :last_name, class: "form-control" %>
    </div>
    <div class="col-md-8">
-   <%= f.text_field :current_city, class: "form-control" %>
+   <strong>Current City: </strong><%= f.text_field :current_city, class: "form-control" %>
    </div>
    <div class="col-md-8">
-   <%= f.text_field :email, class: "form-control" %>
+   <strong>Email: </strong><%= f.text_field :email, class: "form-control" %>
    </div>
    <div class="col-md-8">
    <%= f.submit "Update User" %>

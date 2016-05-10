@@ -1,31 +1,42 @@
-<div>
-<% if current_user == @user %>
+<div class="col-md-4">
+  <% if current_user == @user %>
 
-Welcome, <strong><%= @user.first_name %> <%= @user.last_name%></strong>!<br>
-You are logged in under <em><%= @user.email %></em> <br>
-<strong>Current City: </strong><%= @user.current_city %><br>
-<!-- <%= @user.email %><br> -->
-<strong>Member Since: </strong><%= @user.created_at %><br>
-<!-- <%= link_to "Edit", edit_user_path(@user) %> -->
+      Welcome,
+      <strong><%= @user.first_name %>
+          <%= @user.last_name%></strong>!<br>
+      You are logged in under
+      <em><%= @user.email %></em>
+      <br>
+      <strong>Current City:
+      </strong><%= @user.current_city %><br>
+      <!-- <%= @user.email %><br> -->
+      <strong>Member Since:
+      </strong><%= @user.created_at %><br>
+      <!-- <%= link_to "Edit", edit_user_path(@user) %> -->
 
+      <button type="button" class="btn btn-default btn-xs"><%= link_to "Edit", edit_user_path(@user) %></button>
 
-<button type="button" class="btn btn-default btn-xs"><%= link_to "Edit", edit_user_path(@user) %></button>
+    <% else %>
 
-<% else %>
+      <strong>Name:
+      </strong><%= @user.first_name %>
+      <%= @user.last_name%><br>
+      <strong>From:
+      </strong><%= @user.current_city %><br>
+      <strong>Member Since:
+      </strong><%= @user.created_at %><br>
 
-<strong>Name: </strong><%= @user.first_name %> <%= @user.last_name%><br>
-<strong>From: </strong><%= @user.current_city %><br>
-<strong>Member Since: </strong><%= @user.created_at %><br>
-
-<% end %>
+    <% end %>
 </div>
+<table class="table">
+  <div class="col-md-8">
+      <div class="container">
+          <h4><%= @user.first_name %>'s posts:</h4>
+          <% @posts.each do |post| %>
 
-<div class="container">
-  <h4><%= @user.first_name %>'s posts:</h4>
-  <% @posts.each do |post| %>
-    <ul>
-      <li><%= link_to post.title, posts_path(post) %>
-    </ul>
-  <% end %>
+                <li><%= link_to post.title, posts_path(post) %></li>
 
-</div>
+          <% end %>
+      </div>
+  </div>
+</table>

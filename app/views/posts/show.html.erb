@@ -1,4 +1,4 @@
-<div>
+<div class="col-md-8" style="margin:80px;">
 
   <strong><%= @post.title %></strong><br>
   <%= @post.content %><br>
@@ -7,5 +7,6 @@
     <%= button_to "Delete", posts_path(@post), data: {confirm: "Are you sure?"}, method: :delete %>
     <%= button_to "Edit", edit_post_path(@post), method: "get" %>
   <% end %>
+
 
 </div>
