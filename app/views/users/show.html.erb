@@ -27,6 +27,27 @@
       </strong><%= @user.created_at %><br>
 
     <% end %>
+
+    <section class="picture-layout">
+      <header class="row bio-info">
+        <section class="picture">
+          <div class="col-sm-6 profile-1">
+            <div class="picture-img">
+              <%= cl_image_tag(@user.picture.url) %>
+
+              <span style="vertical-align:middle">
+                <%= form_for @user do |f| %>
+                <%= f.file_field :picture %>
+                <%= f.hidden_field(:picture_cache) %>
+                <%= f.submit "Submit" %>
+                <% end %>
+              </span>
+            </div>
+          </div>
+        </section>
+      </header>
+    </section>
+
 </div>
 <table class="table">
   <div class="col-md-8">
