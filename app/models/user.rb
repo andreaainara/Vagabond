@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  mount_uploader :picture, PictureUploader
+
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :current_city, presence: true

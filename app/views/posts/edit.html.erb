@@ -6,4 +6,10 @@
    <%= f.submit "Save Post" %>
    <% end %>
 
+   <%= form_for @user fo |f| %>
+   <%= f.file_field :picture %>
+   <%= f.hidden_field(:picture_cache) %>
+   <%f.submit "Submit" %>
+   <% end %>
+
 </div>
